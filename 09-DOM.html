@@ -1,0 +1,29 @@
+<!-- 1. when we start queryseledtor with dot then it looks for 
+class instead of elemnet name called class selector
+     2. HTML elemnets are js objects.. so thats the reason 
+we're getting seconf button element whiole printing
+     3. objects r values and we can save them in varaibles
+     4. DOM combined js and html together and gives 
+full control of the webpage
+     5. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DOM PRACTISE
+        </title>
+    </head>
+    <body>
+        <button>CLICK HERE</button>
+        <button class="js-button">NEW BUTTON</button>
+        <script>
+            console.log(document.querySelector('.js-button'))
+            // console.log(document.querySelector('button'));
+            // console.log(document.body.innerHTML)
+            // document.body.innerHTML='<button>AGAIN CLICK HERE!</button>'
+            // console.log(document.querySelector('button'));
+            // console.log(document.querySelector('button').innerHTML);
+            // document.querySelector('button').innerHTML = 'uday';
+        </script>
+    </body>
+</html>

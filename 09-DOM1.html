@@ -1,0 +1,70 @@
+<!-- 
+        1. we can use innerText instead of innerHTML
+           cause if we use innerHTML in below we can't
+           give spaces to button such as
+           onclick >button(correct) but onlcik > button
+           (wrong) since there is space in html and that
+           will effect while checking if subscribe or
+           subscribed...for that sake use innerText.
+        2. HTML element for a text box is <input>.this doesn't 
+           require closing tag since these are called void elements.
+        3. place holder in below basically tells the text when there is 
+           no order.
+        4. when ever we get value from dom that will be in string
+           so we manually need to convert that to number..
+        5. clicks,keydowns -> events && onclick,onkeydowns -> event listeners.
+        6. Below we have used the onkeydown to listedn the event. so it
+           basically gives all the object of event which we baiscally type
+           fromn the input box... so the thing why we r using this is
+           when we hit enter na then it will automatically call 
+           calculate_cmount() function with out clicking calculate button.
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DOM PRATCISE 1
+        </title>
+    </head>
+    <body>
+        <p>YouTube Subscribe button</p>
+        <button class ="subscribe-button" onclick="clicked_subcribed()">Subscribe</button>
+        <p class="amazon">Amazon Shipping Calculator.</p>
+        <p>Orders under $40 = +$10 Shipping.</p>
+        <p>Orders above $40 = Free Shipping.</p>
+        <input class = 'amount' placeholder="Cost of the order" 
+                onkeydown="event_listener()">
+        <button onclick="calculate_amout()">Calculate</button>
+        <p  class="display-total"></p>
+        <script>
+
+            function event_listener(){
+                if (event.key === 'Enter'){
+                    calculate_amout();
+            }
+            }
+            function calculate_amout(){
+                const input_value = document.querySelector('.amount');
+                let cost = input_value.value;
+                if (cost >= 40){
+                    cost = Number(cost);
+                }
+                else if (cost <= 40){
+                    cost = (Number(cost)+10).toFixed(2);
+                }
+
+                document.querySelector('.display-total').innerHTML =  `$${cost}`
+            }
+            
+            function clicked_subcribed(){
+                const button = document.querySelector('.subscribe-button')
+                if (button.innerText === 'Subscribe'){
+                    button.innerText = 'Subscribed'
+                }
+                else{
+                    button.innerText = 'Subscribe'
+                }
+            }
+        </script>
+    </body>
+</html>

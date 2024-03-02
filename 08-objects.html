@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            OBJECTS Practise
+        </title>
+    </head>
+    <body>
+        <script>
+            const uday = {
+                "name":"kiran",
+                age:22
+            }
+            console.log(uday);
+            console.log('name',uday.name);
+            console.log('age',uday.age);
+            uday.name='uday';
+            console.log(uday.name);
+            let a = uday.age;
+            uday.age+=1;
+            console.log('uday object',uday)
+            a+=1;
+            uday.age = a;
+            console.log(uday);
+            console.log(uday);
+            uday['name']='Ramaraju';
+            console.log(uday['name']);
+            console.log(uday.city)
+            uday.city='eluru';
+            console.log(uday.city);
+            console.log(uday["town"])
+            console.log('UDAY'.toLowerCase())
+            a=3.0.toString();
+            console.log(typeof(a));
+            console.log(typeof(3.0));
+            b=true.toString();
+            console.log(typeof(b));
+            console.log(typeof(true));
+            const obj1 = {
+                name:'hihihi'
+            };
+            const obj2 = obj1;
+            obj1.name = 'helohelo'
+            console.log(obj1);
+            console.log(obj2);
+        </script>
+    </body>
+</html>

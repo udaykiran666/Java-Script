@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            bla bla
+        </title>
+    </head>
+    <body>
+        <button onclick="check_hi()">click here</button>
+        <script>
+            let a = localStorage.getItem('a') || 1;
+            console.log('printing b is :',a)
+            function check_hi(){
+                let b = 3;
+                localStorage.setItem('a',JSON.stringify(b));
+            }
+        </script>
+    </body>
+</html>
