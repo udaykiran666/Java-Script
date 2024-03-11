@@ -18,6 +18,8 @@
            fromn the input box... so the thing why we r using this is
            when we hit enter na then it will automatically call 
            calculate_cmount() function with out clicking calculate button.
+        7. Element can have multiple classes we just divide them up with spaces.
+
  -->
 <!DOCTYPE html>
 <html>
@@ -25,17 +27,58 @@
         <title>
             DOM PRATCISE 1
         </title>
+        <style>
+        body{
+            font-family: Arial;
+            }
+            .subscribe-button-css{
+                border: None;
+                background-color: black;
+                color: white;
+                padding-top:10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                cursor: pointer;
+                border-radius: 50px;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+            .is-subscribed{
+                background-color: rgb(240,240,240);
+                color:black;
+            }
+            .amount{
+                padding-top:10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                font-family: Arial;
+            }
+            .calculate-button{
+                background-color: green;
+                border: None;
+                color: white;
+                padding-top:12px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 12px;
+            }
+
+        </style>
     </head>
     <body>
         <p>YouTube Subscribe button</p>
-        <button class ="subscribe-button" onclick="clicked_subcribed()">Subscribe</button>
+        <button class ="subscribe-button subscribe-button-css" onclick="clicked_subcribed()">Subscribe</button>
         <p class="amazon">Amazon Shipping Calculator.</p>
         <p>Orders under $40 = +$10 Shipping.</p>
         <p>Orders above $40 = Free Shipping.</p>
-        <input class = 'amount' placeholder="Cost of the order" 
+        <input class = 'amount' placeholder="Cost of Order" 
                 onkeydown="event_listener()">
-        <button onclick="calculate_amout()">Calculate</button>
+        <button class="calculate-button" onclick="calculate_amout()">Calculate</button>
         <p  class="display-total"></p>
+        <p class="error-message"></p>
+
         <script>
 
             function event_listener(){
@@ -46,23 +89,50 @@
             function calculate_amout(){
                 const input_value = document.querySelector('.amount');
                 let cost = input_value.value;
-                if (cost >= 40){
-                    cost = Number(cost);
-                }
-                else if (cost <= 40){
-                    cost = (Number(cost)+10).toFixed(2);
+                clearErrorMessage(); // Clear any previous error message
+                // Check if cost is not a valid number
+                if (isNaN(cost) || cost === ''){
+                    displayErrorMessage("Please enter a valid amount !!");
+                    clearTotalDisplay();
+                    return; // Exit the function early if cost is not valid
                 }
 
-                document.querySelector('.display-total').innerHTML =  `$${cost}`
+                cost = Number(cost); // Convert cost to a number
+
+                if (cost >= 40){
+                    cost = cost.toFixed(2); // No need to add shipping, already free
+                } else {
+                    cost = (cost + 10).toFixed(2); // Add $10 shipping for orders under $40
+                }
+
+                document.querySelector('.display-total').innerHTML = `$${cost}`;
             }
+
+            function displayErrorMessage(message) {
+                const errorMessageElement = document.querySelector('.error-message');
+                errorMessageElement.innerText = message;
+                errorMessageElement.style.color = 'red';
+            }
+
+            function clearErrorMessage() {
+                const errorMessageElement = document.querySelector('.error-message');
+                errorMessageElement.innerText = '';
+            }
+
+            function clearTotalDisplay() {
+                document.querySelector('.display-total').innerText = '';
+            }
+
             
             function clicked_subcribed(){
                 const button = document.querySelector('.subscribe-button')
                 if (button.innerText === 'Subscribe'){
                     button.innerText = 'Subscribed'
+                    button.classList.add('is-subscribed');
                 }
                 else{
                     button.innerText = 'Subscribe'
+                    button.classList.remove('is-subscribed')
                 }
             }
         </script>
