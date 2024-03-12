@@ -5,7 +5,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .rps-title{
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
 }
 .icon{
@@ -14,23 +14,27 @@ body{
 .button-icon{
     background-color: transparent;
     border: 3px solid white;
-    padding-left:30px;
-    padding-right: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 32px;
     border-radius: 60px;
     margin-right: 10px;
     cursor:pointer
 }
 .display-score-width{
-    margin-top: 60px;
+    margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .reset-score-button{
-    padding:5px 10px;
+    padding:10px 15px;
     cursor:pointer;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .display-result-button{
+    margin-top: 50px;
     font-weight: bold;
     font-size: 25px;
+}
+.display-score-button{
+    margin-top: 50px;
+    font-size: 18px;
 }
