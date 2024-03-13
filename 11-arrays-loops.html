@@ -1,0 +1,52 @@
+<!-- 
+    1.  In python if we try to print imndices of elemenrt for which
+        it has more than the length of arr such a=[1,2,3] & if we
+        try to print a[3] it will throw an issue called list index
+        out of range but in js it will give undefind.
+    2.  In JavaScript, when you declare an array using const, 
+        it means the reference to the array is constant, not the 
+        content of the array itself. This means you can still 
+        modify the elements of the array, such as changing 
+        their values or adding/removing elements.
+    3.  Array.isArray() will check if that is array or not since
+        array is an obj this will be helpful in further.
+    4.  splice(x,y)  | x-> index number and y-> is the no of numbers
+        that we want to remove from x
+    5.  if we give const arr1=[1,2,3] and const arr2=arr1 so when
+        we make any change to arr2 it will also make change
+        to arr1 as well since arr2=arr1 will result in having
+        same refrecne..in order to stop this while decalring
+        arr2 we can declare it as arr1.slice() so this will
+        make arr2 to point different refrence..
+    6.  
+ -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ARRAYS AND LOOPS</title>
+    </head>
+    <body>
+        Hey hi
+        <script>
+            const arr = [10,20,30];
+            console.log(arr);
+            console.log(arr[0],arr[1],arr[2],arr[3]);
+            console.log(Array.isArray([1,2,3,4,5]));
+            arr.push(100);
+            console.log(arr);
+            arr.splice(0,3);
+            console.log(arr);
+
+            function uday(nums){
+                for(let i=0; i < nums.length; i++){
+                    console.log(nums[i]);
+                }
+            }
+            uday([1,2,3])
+        </script>
+    </body>
+</html>

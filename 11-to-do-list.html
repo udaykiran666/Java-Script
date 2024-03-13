@@ -1,0 +1,36 @@
+<!-- 
+    1.  In python if we try to print imndices of elemenrt for which
+        it has more than the length of arr such a=[1,2,3] & if we
+        try to print a[3] it will throw an issue called list index
+        out of range but in js it will give undefind.
+    2.  In JavaScript, when you declare an array using const, 
+        it means the reference to the array is constant, not the 
+        content of the array itself. This means you can still 
+        modify the elements of the array, such as changing 
+        their values or adding/removing elements.
+    3.  Array.isArray() will check if that is array or not since
+        array is an obj this will be helpful in further.
+    4.  splice(x,y)  | x-> index number and y-> is the no of numbers
+        that we want to remove from x
+ -->
+
+
+
+
+<!DOCTYPE html>
+ <html>
+     <head>
+        <title>TO DO LIST</title>
+        <link rel="stylesheet" href="styles/11-to-do-list.css">
+     </head>
+     <body>
+        <p>Todo List</p>
+        <div class="to-do-grid-body">
+            <input class="actual-one-input actual-one-input-css" placeholder="Todo name">
+            <input  class="actual-one-date actual-one-date-css" type="date">
+            <button class="button-for-add" onclick="addactual()">Add</button>
+            <div class="display-arr to-do-grid"></div>
+        </div>
+        <script src="scripts/11-to-do-list.js"></script>
+     </body>
+ </html>
