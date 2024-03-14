@@ -1,0 +1,42 @@
+
+body{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.rps-title{
+    font-size: 30px;
+    font-weight: bold;
+}
+.icon{
+    height: 50px;
+}
+.button-icon{
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 30px 32px;
+    border-radius: 60px;
+    margin-right: 10px;
+    cursor:pointer
+}
+.display-score-width{
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.reset-score-button,
+.auto-play-button{
+    padding:10px 15px;
+    cursor:pointer;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.display-result-button{
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.display-score-button{
+    margin-top: 50px;
+    font-size: 18px;
+}

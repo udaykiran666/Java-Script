@@ -1,0 +1,55 @@
+<!-- 
+    1. <p> is a block element which means it will block
+        while line for that block itself.
+    2. <img> element doesn't requires any closing tag since it is
+        void element.
+    3.  border : x y z    |   x->width, y->style(solid,dotted,dashed)
+        z->(color)
+    4.  padding : 30px |  if we give like this all left,right,bottom
+        top padding will be set to 30px
+    5.  padding :10px 20px  |  if we give like this means that 10px 
+        will be applicable for top/bottom and 20px will be 
+        applicable for left/right
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors Game session 10</title>
+    <link rel="stylesheet" href="styles/12-rps.css">
+</head>
+<body>
+
+    <p class="rps-title">Rock Paper Scissors</p>
+
+    <button onclick="
+    let computer = check_computer();
+    let human_move = check_result('rock', computer);"
+    class = "button-icon">
+    <img src="pictures/rock-emoji.png" class= "icon"></button>
+
+    <button onclick="
+    let computer = check_computer();
+    let human_move = check_result('paper', computer);"
+    class = "button-icon">
+    <img src="pictures/paper-emoji.png" class= "icon"></button>
+
+    <button onclick="
+    let computer = check_computer();
+    let human_move = check_result('scissors', computer);"
+    class = "button-icon"> 
+    <img src="pictures/scissors-emoji.png" class= "icon"></button>
+
+    <p class="display-result display-score-width display-result-button"></p>
+    <p class="display-human-computer-overview display-score-width"></p>
+    <p class="display-score display-score-width display-score-button"></p>
+
+    <button onclick="
+    reset_score();
+    " class="reset-score-button">Reset Score</button>
+
+    <button class="auto-play-button" onclick="auto_play_button()">Auto Play</button>
+
+    <script src="scripts/12-rps.js"></script>
+</body>
+</html>

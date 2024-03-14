@@ -1,0 +1,88 @@
+<!-- 
+    1.  settimeout() basically takes 2 parametrers one is
+        function and another is time and here time is in
+        milliseconds..after that time the fucntion which
+        we gave will execute.
+    2.  Asynchronous code means the computer wont wait for
+        that line to execute before gng to nect line.
+    3.  advantage of asybchronous code is it doens't block our
+        code for that time we have setted...this allows us 
+        to ther things while the time is set in background.
+    4.  setinterval is same as settimeout but the only 
+        difference is that settimeout execute the funtion
+        once and stops...but this interval will continue on 
+        executing for the time interval which we given.
+ -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Functions Practise</title>
+    </head>
+    <body>
+        <script>
+            // const uday = function kiran(){
+            //     console.log('uday kiran')
+            // }
+            // console.log(uday);
+            // console.log(typeof(uday));
+            // uday()
+
+
+            // const a = {
+            //     name : 'uday',
+            //     fun : function(){
+            //         console.log('hey hi there');
+            //     }
+            // }
+            // a.fun()
+
+
+            // function b(param){   // this method will return function of param
+            //     console.log(param);
+            // }
+            // b(function(){
+            //     consloe.log('uday hey hi there');
+            // })
+
+
+            // function b1(param){
+            //     param();
+            // }
+            // b1(function(){
+            //     console.log('uday hey hi there.')
+            // })
+
+            // setTimeout(function()
+            // {
+            //     console.log('timeout')
+            // },5000);
+
+            // setInterval(function(){
+            //     console.log('interval')
+            // },5000);
+            // arr = ['pack','bag','hey']
+            // arr.forEach(function(value, index){
+            //     console.log(index);
+            //     console.log(value.toUpperCase());
+            //     console.log(value.toLowerCase());
+            // });
+
+
+            let arr = [1,2,3]
+            // arr.forEach(function(value){
+            //     if (value === 2){
+            //         return
+            //     }
+            //     else{
+            //         console.log(value)
+            //     }
+            // })
+
+            arr.forEach((value,index) =>{
+                console.log(value);
+                console.log(index);
+            })
+        </script>
+    </body>
+</html>
