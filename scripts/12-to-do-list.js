@@ -1,5 +1,9 @@
 const arr = [];
 
+document.querySelector('.js-eventlist-addactual')
+.addEventListener('click',()=>{
+    addactual()
+})
 
 function addactual(){
     const input1 = document.querySelector('.actual-one-input');
@@ -21,13 +25,21 @@ function loop(){
         const b = `
                     <div>${a.name}</div>
                     <div>${a.date}</div> 
-                    <button class="button-for-delete" onclick = "deleteitem(${index})">Delete</button>
+                    <button class="button-for-delete js-eventlist-deleteitem">Delete</button>
                    `
         totlisthtml += b;
     })
-    console.log(totlisthtml);
 
     document.querySelector('.display-arr').innerHTML = totlisthtml;
+
+    document.querySelectorAll('.js-eventlist-deleteitem')
+    .forEach((deletebutton,index)=>{
+    console.log(deletebutton)
+    deletebutton.addEventListener('click',()=>{
+        arr.splice(index,1);
+        loop();
+    });
+});
 }
 
 function deleteitem(index){
