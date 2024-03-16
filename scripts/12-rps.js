@@ -57,7 +57,20 @@ function check_result(human_move, computer){
     update_result();
     update_overview(human_move, computer);
 }
+document.querySelector('.js-rock-eventlist-button')
+.addEventListener('click',() => {
+    check_result('rock',check_computer())
+})
 
+document.querySelector('.js-paper-eventlist-button')
+.addEventListener('click',() => {
+    check_result('paper',check_computer())
+})
+
+document.querySelector('.js-scissors-eventlist-button')
+.addEventListener('click',() => {
+    check_result('scissors',check_computer())
+})
 function check_computer(){
     const randomnumber = Math.random();
     let computer = '';
@@ -73,6 +86,10 @@ function check_computer(){
     return computer;
 }
 
+document.querySelector('.js-eventlist-reset')
+.addEventListener('click',() =>{
+    reset_score()
+})
 function reset_score(){
     score = {
         wins: 0,
@@ -101,6 +118,10 @@ function update_overview(human_move, computer){
     document.querySelector('.display-human-computer-overview').innerHTML = `You <img src = "pictures/${human_move}-emoji.png" class="icon"> 
     Computer <img src="pictures/${computer}-emoji.png" class="icon">`}
 
+document.querySelector('.js-eventlist-autoplay')
+.addEventListener('click', ()=>{
+    auto_play_button()
+})
 let is_auto_playing = false;
 let intervalid;
 function auto_play_button(){

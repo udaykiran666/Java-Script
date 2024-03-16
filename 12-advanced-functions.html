@@ -12,6 +12,10 @@
         difference is that settimeout execute the funtion
         once and stops...but this interval will continue on 
         executing for the time interval which we given.
+    5.  addEventlistener is same as onclick but th only
+        dfiference is that addeventlistener help us to
+        add multiple eventlistenes which helps us in complex
+        code.
  -->
 
 <!DOCTYPE html>
@@ -20,7 +24,13 @@
         <title>Advanced Functions Practise</title>
     </head>
     <body>
+        <input class="hi" type="text" placeholder="Enter the value.">
         <script>
+            const a = document.querySelector('.hi');
+
+            a.addEventListener("keypress", function(event){
+                console.log(event);
+            })
             // const uday = function kiran(){
             //     console.log('uday kiran')
             // }
@@ -69,20 +79,20 @@
             // });
 
 
-            let arr = [1,2,3]
-            // arr.forEach(function(value){
-            //     if (value === 2){
-            //         return
-            //     }
-            //     else{
-            //         console.log(value)
-            //     }
-            // })
+            // let arr = [1,2,3]
+            // // arr.forEach(function(value){
+            // //     if (value === 2){
+            // //         return
+            // //     }
+            // //     else{
+            // //         console.log(value)
+            // //     }
+            // // })
 
-            arr.forEach((value,index) =>{
-                console.log(value);
-                console.log(index);
-            })
+            // arr.forEach((value,index) =>{
+            //     console.log(value);
+            //     console.log(index);
+            // })
         </script>
     </body>
 </html>
