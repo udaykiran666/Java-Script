@@ -86,6 +86,17 @@ function check_computer(){
     return computer;
 }
 
+document.body.addEventListener('keydown', (event)=>{
+    if (event.key === 'r'){
+        check_result('rock',check_computer());
+    }
+    else if (event.key === 'p'){
+        check_result('paper',check_computer());
+    }
+    else if(event.key === 's'){
+        check_result('scissors',check_computer());
+    }
+})
 document.querySelector('.js-eventlist-reset')
 .addEventListener('click',() =>{
     reset_score()
