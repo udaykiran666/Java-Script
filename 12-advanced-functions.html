@@ -16,6 +16,15 @@
         dfiference is that addeventlistener help us to
         add multiple eventlistenes which helps us in complex
         code.
+    6.  the filter method creates a new array containing only 
+        the elements that satisfy a specific condition. It doesn't 
+        modify the original array; instead, it returns a new array 
+        with the filtered elements.
+    7.  The map method creates a new array by applying a function 
+        to each element of the original array. It also doesn't modify 
+        the original array; instead, it returns a new array with the 
+        modified elements.
+
  -->
 
 <!DOCTYPE html>
@@ -24,13 +33,13 @@
         <title>Advanced Functions Practise</title>
     </head>
     <body>
-        <input class="hi" type="text" placeholder="Enter the value.">
+        <!-- <input class="hi" type="text" placeholder="Enter the value."> -->
         <script>
-            const a = document.querySelector('.hi');
+            // const a = document.querySelector('.hi');
 
-            a.addEventListener("keypress", function(event){
-                console.log(event);
-            })
+            // a.addEventListener("keypress", function(event){
+            //     console.log(event);
+            // })
             // const uday = function kiran(){
             //     console.log('uday kiran')
             // }
@@ -93,6 +102,25 @@
             //     console.log(value);
             //     console.log(index);
             // })
+
+            const arr = [1,2,3]
+// ------------------------ > Arrays methods (forEach, filter, map)
+// 1.forEach :
+            arr.forEach((value,index)=>{
+                console.log(value);
+            })
+//  2.filter :
+            const b = arr.filter((value,index)=>{ 
+                return value>2;
+             } // filter basically check consition & add satisfied things in new arr & return that
+        );
+            console.log(b);
+            
+//  3.map   :
+             const c = arr.map((value,indes)=>{
+                return value*2; // map basically applies function to each element in original array adn create new array with out modifyinf original one
+             });
+             console.log(c);
         </script>
     </body>
 </html>
